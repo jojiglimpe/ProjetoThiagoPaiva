@@ -1,5 +1,6 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
@@ -9,6 +10,7 @@ import { Exercicio3 } from './exercicios/exercicio3/exercicio3';
 import { Exercicio4 } from './exercicios/exercicio4/exercicio4';
 import { Exercicio5 } from './exercicios/exercicio5/exercicio5';
 import { Exercicio6 } from './exercicios/exercicio6/exercicio6';
+import { Exercicio7 } from './exercicios/exercicio7/exercicio7';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { Exercicio6 } from './exercicios/exercicio6/exercicio6';
     Exercicio4,
     Exercicio5,
     Exercicio6,
+    Exercicio7,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })
