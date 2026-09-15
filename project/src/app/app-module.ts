@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Exercicio1 } from './exercicios/exercicio1/exercicio1';
 import { Exercicio2 } from './exercicios/exercicio2/exercicio2';
+import { Exercicio3 } from './exercicios/exercicio3/exercicio3';
 
 @NgModule({
-  declarations: [App, Exercicio1, Exercicio2],
+  declarations: [App, Exercicio1, Exercicio2, Exercicio3],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
