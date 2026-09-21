@@ -12,6 +12,7 @@ import { Exercicio5 } from './exercicios/exercicio5/exercicio5';
 import { Exercicio6 } from './exercicios/exercicio6/exercicio6';
 import { Exercicio7 } from './exercicios/exercicio7/exercicio7';
 import { Exercicio8 } from './exercicios/exercicio8/exercicio8';
+import { Exercicio9 } from './exercicios/exercicio9/exercicio9';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { Exercicio8 } from './exercicios/exercicio8/exercicio8';
     Exercicio6,
     Exercicio7,
     Exercicio8,
+    Exercicio9,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
