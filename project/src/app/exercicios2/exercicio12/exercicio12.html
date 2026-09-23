@@ -1,0 +1,53 @@
+<h2>Exercício 12 - Cadastro simplificado</h2>
+
+<div>
+  <label>Nome do produto:</label>
+
+  <input
+    type="text"
+    [(ngModel)]="nome"
+  >
+</div>
+
+<br>
+
+<div>
+  <label>Quantidade:</label>
+
+  <input
+    type="number"
+    [(ngModel)]="quantidade"
+  >
+</div>
+
+<br>
+
+<button (click)="cadastrar()">
+  Cadastrar
+</button>
+
+<p *ngIf="mensagemErro">
+  {{ mensagemErro }}
+</p>
+
+<hr>
+
+<h3>Produtos cadastrados</h3>
+
+<p *ngIf="produtos.length === 0">
+  Nenhum produto cadastrado
+</p>
+
+<ul>
+  <li *ngFor="let produto of produtos">
+
+    {{ produto.nome }}
+    -
+    Quantidade: {{ produto.quantidade }}
+
+    <button (click)="excluir(produto.id)">
+      Excluir
+    </button>
+
+  </li>
+</ul>
