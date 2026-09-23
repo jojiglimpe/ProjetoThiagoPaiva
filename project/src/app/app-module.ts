@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+
 import { Exercicio1 } from './exercicios/exercicio1/exercicio1';
 import { Exercicio2 } from './exercicios/exercicio2/exercicio2';
 import { Exercicio3 } from './exercicios/exercicio3/exercicio3';
@@ -27,10 +28,18 @@ import { Exercicio10 } from './exercicios/exercicio10/exercicio10';
     Exercicio7,
     Exercicio8,
     Exercicio9,
-    Exercicio10,
+    Exercicio10
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [provideBrowserGlobalErrorListeners()],
-  bootstrap: [App],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
+  ],
+  providers: [
+    provideBrowserGlobalErrorListeners()
+  ],
+  bootstrap: [
+    App
+  ]
 })
-export class AppModule {}
+export class AppModule { }
