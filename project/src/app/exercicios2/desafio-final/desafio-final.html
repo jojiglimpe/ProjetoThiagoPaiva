@@ -1,0 +1,81 @@
+<h2>Desafio Final - Painel de Projetos</h2>
+
+<p>Total de projetos: {{ projetos.length }}</p>
+
+<p>Projetos concluídos: {{ totalConcluidos() }}</p>
+
+<button (click)="alterarExibicao()">
+  {{ ocultarConcluidos ? 'Mostrar projetos concluídos' : 'Ocultar projetos concluídos' }}
+</button>
+
+<hr>
+
+<div class="lista-projetos">
+
+  @for (projeto of projetosVisiveis; track projeto.id; let i = $index) {
+
+    <div
+      class="projeto"
+      [ngClass]="{
+        'planejamento': projeto.status === 'planejamento',
+        'desenvolvimento': projeto.status === 'desenvolvimento',
+        'testes': projeto.status === 'testes',
+        'concluido': projeto.status === 'concluído',
+        'nota-alta': projeto.nota !== null && projeto.nota >= 7,
+        'nota-baixa': projeto.nota !== null && projeto.nota < 6
+      }"
+    >
+
+      <h3>
+        {{ i + 1 }} - {{ projeto.titulo }}
+      </h3>
+
+      <p>
+        Equipe: {{ projeto.equipe }}
+      </p>
+
+      <p>
+        Status: {{ projeto.status }}
+      </p>
+
+      @if (projeto.nota !== null) {
+        <p>
+          Nota: {{ projeto.nota }}
+        </p>
+      } @else {
+        <p>
+          Nota ainda não definida
+        </p>
+      }
+
+      @if (projeto.entregue) {
+        <p class="entregue">
+          Projeto entregue
+        </p>
+      }
+
+      @if (projeto.nota !== null && projeto.nota >= 7) {
+        <p>
+          Projeto com bom desempenho
+        </p>
+      }
+
+      @if (projeto.nota !== null && projeto.nota < 6) {
+        <p>
+          Atenção: nota abaixo de 6
+        </p>
+      }
+
+      <button (click)="alterarStatus(projeto)">
+        Alterar status
+      </button>
+
+    </div>
+
+  } @empty {
+
+    <p>Nenhum projeto cadastrado</p>
+
+  }
+
+</div>

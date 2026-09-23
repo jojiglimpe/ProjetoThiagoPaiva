@@ -76,6 +76,11 @@ const routes: Routes = [
     path: 'exercicio14',
     loadChildren: () =>
       import('./exercicios2/exercicio14/exercicio14-module').then(m => m.Exercicio14Module)
+  },
+  {
+    path: 'desafio-final',
+    loadChildren: () =>
+      import('./exercicios2/desafio-final/desafio-final-module').then(m => m.DesafioFinalModule)
   }
 ];
 

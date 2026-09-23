@@ -1,0 +1,42 @@
+.lista-projetos {
+  margin-top: 20px;
+}
+
+.projeto {
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+}
+
+.planejamento {
+  background-color: lightgray;
+}
+
+.desenvolvimento {
+  background-color: lightblue;
+}
+
+.testes {
+  background-color: lightyellow;
+}
+
+.concluido {
+  background-color: lightgreen;
+}
+
+.nota-alta {
+  border: 3px solid green;
+}
+
+.nota-baixa {
+  border: 3px solid red;
+}
+
+.entregue {
+  font-weight: bold;
+  color: green;
+}
+
+button {
+  margin-top: 5px;
+}
