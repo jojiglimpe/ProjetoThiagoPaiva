@@ -1,0 +1,82 @@
+<h2>Exercício 14 - Sintaxe moderna do Angular</h2>
+
+<hr>
+
+<h3>Exercício 2 convertido - Situação do usuário</h3>
+
+@if (usuarioLogado) {
+  <p>Usuário autenticado</p>
+} @else {
+  <p>Acesso não autorizado</p>
+}
+
+<button (click)="alternarLogin()">
+  {{ usuarioLogado ? 'Sair' : 'Entrar' }}
+</button>
+
+<hr>
+
+<h3>Exercício 6 convertido - Lista de nomes</h3>
+
+<p>Quantidade de nomes: {{ nomes.length }}</p>
+
+<ul>
+  @for (pessoa of nomes; track pessoa.id; let i = $index) {
+    <li>
+      {{ i + 1 }} - {{ pessoa.nome }}
+    </li>
+  } @empty {
+    <li>Nenhum nome cadastrado</li>
+  }
+</ul>
+
+<button (click)="removerUltimo()">
+  Remover último
+</button>
+
+<button (click)="limparLista()">
+  Limpar lista
+</button>
+
+<button (click)="restaurarLista()">
+  Restaurar lista
+</button>
+
+<hr>
+
+<h3>Exercício 8 convertido - Lista de produtos</h3>
+
+<ul>
+  @for (produto of produtos; track produto.id; let i = $index) {
+    <li>
+      <p>Posição: {{ i + 1 }}</p>
+
+      <p>Nome: {{ produto.nome }}</p>
+
+      <p>Preço: R$ {{ produto.preco }}</p>
+
+      <p>Quantidade: {{ produto.quantidade }}</p>
+
+      <p>
+        Valor total em estoque:
+        R$ {{ produto.preco * produto.quantidade }}
+      </p>
+    </li>
+  } @empty {
+    <li>Nenhum produto cadastrado</li>
+  }
+</ul>
+
+<hr>
+
+<h3>Diferenças entre as sintaxes</h3>
+
+<p>
+  1. Na sintaxe antiga usamos *ngIf e *ngFor.
+  Na sintaxe moderna usamos &#64;if e &#64;for diretamente no template
+</p>
+
+<p>
+  2. A sintaxe moderna possui &#64;empty para tratar listas vazias
+  e utiliza track para identificar cada item durante a repetição
+</p>
