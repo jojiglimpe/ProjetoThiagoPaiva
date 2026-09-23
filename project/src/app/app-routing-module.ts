@@ -26,11 +26,20 @@ const routes: Routes = [
     path: 'exercicio4',
     loadChildren: () =>
       import('./exercicios2/exercicio4/exercicio4-module').then(m => m.Exercicio4Module)
+  },
+  {
+    path: 'exercicio5',
+    loadChildren: () =>
+      import('./exercicios2/exercicio5/exercicio5-module').then(m => m.Exercicio5Module)
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule {}
